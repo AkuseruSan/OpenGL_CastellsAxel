@@ -11,6 +11,7 @@
 #include "Shader.h"
 #include <SOIL.h>
 
+
 using namespace glm;
 using namespace std;
 
@@ -23,6 +24,8 @@ private:
 	Renderer();
 	Renderer(Renderer const&);
 
+	int screenWidth, screenHeight;
+
 	GLFWwindow* window;
 public:
 	static Renderer& Instance()
@@ -33,9 +36,10 @@ public:
 	~Renderer();
 
 	void Init(const int width, const int height, char* titleString);
+	void SetProjectionMatrix();
 
 	GLFWwindow* GetWindow();
 	Shader* shader;
 
-	void DrawTriangle();
+	void DrawPolygon();
 };

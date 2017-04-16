@@ -19,5 +19,6 @@ public:
 	}
 	~GameEngine();
 
+	static void error_callback(int error, const char* description);
 	void Run(const int width, const int height, char* titleString, std::function<void()> Update, std::function<void()> Draw);
 };
