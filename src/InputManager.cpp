@@ -10,7 +10,7 @@ InputManager::~InputManager()
 
 }
 
-pair<int, int> InputManager::GetKeyCallback()
+pair<int, int> InputManager::GetKeyboardInput()
 {
 	return keyCallbackRet;
 }

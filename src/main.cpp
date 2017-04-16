@@ -3,10 +3,15 @@
 const int WIDTH = 512;
 const int HEIGHT = 512;
 
-void InputUpdate()
+void InputUpdate();
+void Update();
+void Draw();
+
+int main()
 {
-	if (IM.GetKeyCallback().first == GLFW_KEY_ESCAPE && IM.GetKeyCallback().second == GLFW_PRESS)
-		glfwSetWindowShouldClose(W, GL_TRUE);
+	GE.Run(WIDTH, HEIGHT, "OpenGL - TestChamber", Update, Draw);
+
+	return 0;
 }
 
 void Update()
@@ -19,9 +24,8 @@ void Draw()
 	R.DrawTriangle();
 }
 
-int main()
+void InputUpdate()
 {
-	GE.Run(WIDTH, HEIGHT, "OpenGL - TestChamber", Update, Draw);
-
-	return 0;
+	if (IM.GetKeyboardInput().first == GLFW_KEY_ESCAPE && IM.GetKeyboardInput().second == GLFW_PRESS)
+		glfwSetWindowShouldClose(W, GL_TRUE);
 }

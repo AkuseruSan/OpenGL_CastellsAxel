@@ -34,5 +34,5 @@ public:
 	}
 
 	//Primer int: key  |  Segundo int: action
-	pair<int, int> GetKeyCallback();
+	pair<int, int> GetKeyboardInput();
 };
