@@ -370,7 +370,7 @@ void main() {
 		GLint locTex = glGetUniformLocation(shader.Program, "ourTexture");
 		GLint locTex2 = glGetUniformLocation(shader.Program, "ourTexture2");
 		GLint mixID = glGetUniformLocation(shader.Program, "mixStuff");
-		shader.USE();
+		shader.Use();
 		
 		glUniform1f(mixID, mixStuff);
 

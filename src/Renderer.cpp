@@ -50,9 +50,6 @@ void Renderer::Init(const int width, const int height, char* titleString)
 	}
 	int screenWithd, screenHeight;
 	glfwGetFramebufferSize(window, &screenWithd, &screenHeight);
-	//set function when callback
-	//TODO
-
 
 	//set windows and viewport
 	//TODO
@@ -60,5 +57,24 @@ void Renderer::Init(const int width, const int height, char* titleString)
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	//fondo
-	glClearColor(0.0, 0.0, 1.0, 1.0);
+	//glClearColor(25.0, 1.0, 1.0, 1.0);
+
+	//shader = new Shader(Settings::VERTEX_SHADER_PATH, Settings::FRAGMENT_SHADER_PATH);
+}
+
+void Renderer::DrawTriangle()
+{
+	float vertices[] = {
+		0.0f,	 0.5f, // Vertex 1 (x, y)
+		0.5f,	-0.5f, // Vertex 2 (x, y)
+	   -0.5f,   -0.5f  // Vertex 3 (x, y)
+	};
+
+	GLuint vbo;
+
+	glGenBuffers(1, &vbo);
+
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 }

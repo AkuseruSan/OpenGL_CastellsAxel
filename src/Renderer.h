@@ -35,4 +35,7 @@ public:
 	void Init(const int width, const int height, char* titleString);
 
 	GLFWwindow* GetWindow();
+	Shader* shader;
+
+	void DrawTriangle();
 };

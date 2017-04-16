@@ -2,8 +2,7 @@
 
 GameEngine::GameEngine()
 {
-	R.Init(Settings::WIDTH, Settings::HEIGHT, "Hi!");
-	IM.Init(W);
+
 }
 
 GameEngine::~GameEngine()
@@ -11,12 +10,16 @@ GameEngine::~GameEngine()
 
 }
 
-void GameEngine::Run()
+void GameEngine::Run(const int width, const int height, char* titleString, std::function<void()> Update, std::function<void()> Draw)
 {
+	R.Init(width, height, titleString);
+	IM.Init(W);
+
 	while (!glfwWindowShouldClose(W))
 	{
-		if (IM.GetKeyCallback().first == GLFW_KEY_ESCAPE && IM.GetKeyCallback().second == GLFW_PRESS)
-			glfwSetWindowShouldClose(W, GL_TRUE);
+		Update();
+
+		Draw();
 
 		glfwSwapBuffers(W);
 		glfwPollEvents();

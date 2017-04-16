@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Settings.h"
 #include "Renderer.h"
 #include "InputManager.h"
+#include <functional>
 
 #define GE GameEngine::Instance()
 
@@ -19,5 +19,5 @@ public:
 	}
 	~GameEngine();
 
-	void Run();
+	void Run(const int width, const int height, char* titleString, std::function<void()> Update, std::function<void()> Draw);
 };

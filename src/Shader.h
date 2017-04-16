@@ -13,9 +13,9 @@ using namespace std;
 class Shader
 {
 public:
-	GLuint Program;
+	GLuint program;
 	Shader(const GLchar*,const GLchar*);
 	~Shader();
-	void USE();
+	void Use();
 };
 

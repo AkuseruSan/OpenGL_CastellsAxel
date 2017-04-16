@@ -42,21 +42,18 @@
     <ClInclude Include="src\GameEngine.h">
       <Filter>Controller</Filter>
     </ClInclude>
-    <ClInclude Include="src\Settings.h">
-      <Filter>Controller</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\textureFragment.fragmentshader">
+    <None Include="src\shaders\fragmentShader.fragmentshader">
       <Filter>Model</Filter>
     </None>
-    <None Include="src\textureFragment3d.fragmentshader">
+    <None Include="src\shaders\textureFragment3d.fragmentshader">
       <Filter>Model</Filter>
     </None>
-    <None Include="src\textureVertex.vertexshader">
+    <None Include="src\shaders\textureVertex3d.vertexshader">
       <Filter>Model</Filter>
     </None>
-    <None Include="src\textureVertex3d.vertexshader">
+    <None Include="src\shaders\vertexShader.vertexshader">
       <Filter>Model</Filter>
     </None>
   </ItemGroup>

@@ -17,5 +17,8 @@ pair<int, int> InputManager::GetKeyCallback()
 
 void InputManager::Init(GLFWwindow* window)
 {
+	//set function when callback
+	//TODO
+
 	glfwSetKeyCallback(window, IM.key_callback);
 }
